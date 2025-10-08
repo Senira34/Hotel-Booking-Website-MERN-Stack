@@ -14,7 +14,7 @@ const BookIcon = () => (
 const Navbar = () => {
     const navLinks = [
         { name: 'Home', path: '/' },
-        { name: 'Hotels', path: '/' },
+        { name: 'Hotels', path: '/rooms' },
         { name: 'Experience', path: '/' },
         { name: 'About', path: '/' },
     ];
@@ -53,7 +53,8 @@ const Navbar = () => {
 
                 {/* Logo */}
                 <Link to='/' >
-                    <img src={assets.logo} alt="logo" className={`h-9 ${isScrolled && "invert opacity-80"}`}/>
+                    <img src={assets.logo} alt="logo" className={`h-16 ${isScrolled ? "invert opacity-80" : "opacity-70 mix-blend-lighten"}`}/>
+
                 </Link>
 
                 {/* Desktop Nav */}
