@@ -111,6 +111,30 @@ const RoomDetails = () => {
 
             ))}
         </div>
+
+        <div className='max-w-3xl border-y border-gray-300 my-15 py-10 text-gray-500'>
+            <p>
+                Guests will be allocated on the ground floor according to availability. You get a comfortable Two bedroom apartment has a true city feeling. The price quoted is for two guest, at the guest slot please mark the number of guests to get the exact price for groups. The Guests will be allocated ground floor according to availability. You get the comfortable two bedroom apartment that has a true city feeling.
+            </p>
+        </div>
+
+        {/* Hosted By */}
+        <div className='flex flex-col items-start gap-4'>
+            <div className='flex gap-4'>
+                <img src={room.hotel.owner.image} alt="Host" className='h-14 w-14 md:h-18 md:w-18 rounded-full' />
+
+                <div>
+                    <p className='text-lg md:text-xl'>Hosted by {room.hotel.name}</p>
+                    <div className='flex items-center mt-1'> 
+                        <StarRating/>
+                        <p className='ml-2'> 200+ reviews</p>
+                    </div>
+                </div>
+            </div>
+
+            <button className='px-6 py-2.5 mt-4 rounded text-white bg-primary hover:bg-primary-dull transition-all cursor-pointer'>Contact Now </button>
+
+        </div>
         
     </div>
   )
