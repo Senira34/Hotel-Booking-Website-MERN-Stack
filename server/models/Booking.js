@@ -1,17 +1,16 @@
 import mongoose from "mongoose";
 
-const roomSchema = new mongoose.Schema({
+const bookingSchema = new mongoose.Schema({
+    user: { type: String, required: true, ref: 'User' },
+    room: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Room' },
     hotel: { type: String, required: true, ref: 'Hotel' },
-    roomtype: { type: String, required: true },
-    pricePerNight: { type: Number, required: true },
-    amenities: { type: Array, required: true },
-    images: [{ type: String }],
-    isAvailable: { type: Boolean, required: true },
+    guests: { type: Number, required: true },
+    checkInDate: { type: Date, required: true },
+    checkOutDate: { type: Date, required: true },
+    totalPrice: { type: Number, required: true },
+    isPaid: { type: Boolean, default: false }
+}, { timestamps: true });
 
-    
-},  { timestamps: true });
+const Booking = mongoose.model('Booking', bookingSchema);
 
-
-const Room = mongoose.model('Room', roomSchema);
-
-export default Room;
+export default Booking;

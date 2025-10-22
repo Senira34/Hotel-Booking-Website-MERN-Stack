@@ -13,7 +13,7 @@ export const AppProvider = ({ children }) => {
     const currency = import.meta.env.VITE_CURRENCY || '$';
     const navigate = useNavigate();
     const { user } = useUser();
-    const {getToken} = useAuth();
+    const {getToken, isSignedIn} = useAuth();
 
     const [isOwner, setIsOwner] = useState(false)
     const [showHotelReg, setShowHotelReg] = useState(false)
@@ -48,6 +48,7 @@ export const AppProvider = ({ children }) => {
         navigate,
         user,
         getToken,
+        isSignedIn,
         isOwner,
         setIsOwner,
         axios,

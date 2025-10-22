@@ -15,8 +15,6 @@ export const protect = async (req, res, next) => {
         
         // If user doesn't exist, create them (fallback for missing webhook)
         if (!user) {
-            console.log("Creating new user with ID:", userId);
-            
             // Try to get user data from sessionClaims
             const email = authData.sessionClaims?.email || 
                          authData.sessionClaims?.email_address || 
@@ -37,8 +35,6 @@ export const protect = async (req, res, next) => {
                 username: username,
                 image: image,
             });
-            
-            console.log("New user created successfully");
         }
         
         req.user = user;
